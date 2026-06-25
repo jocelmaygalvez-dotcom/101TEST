@@ -4,7 +4,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const { lessonTitle } = req.body;
+    const { lessonTitle, learningArea } = req.body;
     if (!lessonTitle) {
       return res.status(400).json({ error: 'Missing Required Parameter: lessonTitle' });
     }
@@ -14,8 +14,8 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'System configuration error: Groq API Key missing.' });
     }
 
-    const systemPrompt = "You are an expert curriculum design assistant for DepEd Senior High School Philippines. Populate detailed, professional academic content structures tailored for Grade 12 Empowerment Technology lessons.";
-    const userPrompt = `Generate a complete structured lesson plan for an Empowerment Technology Lesson titled: "${lessonTitle}". 
+    const systemPrompt = "You are an expert curriculum design assistant for DepEd Senior High School Philippines. Populate detailed, professional academic content structures tailored for the Strengthened SHS Curriculum.";
+    const userPrompt = `Generate a complete structured lesson plan for a Senior High School Lesson titled: "${lessonTitle}" under the subject area "${learningArea || 'Empowerment Technology'}". 
     Provide the output clearly separated into these EXACT sections so the user can easily view and distribute them:
     
     [REFERENCES]
@@ -23,6 +23,9 @@ export default async function handler(req, res) {
     
     [OBJECTIVES]
     (Provide clear KSA objectives)
+    
+    [INTEGRATION]
+    (Provide meaningful cross-curricular links)
     
     [ENGAGE]
     (5-minute hook activity)
@@ -34,7 +37,7 @@ export default async function handler(req, res) {
     (Core concepts discussion)
     
     [ELABORATE]
-    (Deep real-world application or across-subject integration)
+    (Deep real-world application)
     
     [EVALUATE]
     (Formative assessment strategies and criteria)`;
