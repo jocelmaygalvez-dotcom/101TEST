@@ -46,15 +46,14 @@ aiGenerateBtn?.addEventListener('click', async () => {
   aiStatus.className = "status-msg loading";
   aiGenerateBtn.disabled = true;
 
-  // Environment check: Switches execution rules based on active URL paths
   const isBrowserSandbox = window.location.hostname.includes("codepen") || window.location.hostname === "localhost" || window.location.hostname === "";
 
   try {
     let aiTextContent = "";
 
     if (isBrowserSandbox) {
-      // --- MODE A: DIRECT CODEPEN SANDBOX (Uses your browser token key) ---
-      console.log("Routing Profile: Client View active. Launching direct cloud queries...");
+      // --- MODE A: DIRECT CODEPEN SANDBOX (Uses fallback key config) ---
+      console.log("Routing Profile: Sandbox mode active.");
       const apiKey = "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";
       
       const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -64,7 +63,7 @@ aiGenerateBtn?.addEventListener('click', async () => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          model: "llama3-8b-8192",
+          model: "llama-3.1-8b-instant", // 🌟 FIXED MODEL NAME HERE TOO
           messages: [
             { role: "system", content: "You are an expert curriculum design assistant for DepEd Senior High School Philippines. Populate detailed, professional academic content structures tailored for Grade 12 Empowerment Technology lessons." },
             { role: "user", content: `Generate structured lesson items for an Empowerment Technology Lesson titled: "${lessonTitle}". Provide outputs clearly segmented for: References, Learning Objectives, and brief instructional cues for the 5E cycle stages. Keep responses concise and highly actionable for immediate teaching use.` }
@@ -79,7 +78,7 @@ aiGenerateBtn?.addEventListener('click', async () => {
 
     } else {
       // --- MODE B: VERCEL DEPLOYMENT PRODUCTION (Secure Serverless Architecture) ---
-      console.log("Routing Profile: Vercel Isolated Engine Active. Relaying stream safely via backend serverless core...");
+      console.log("Routing Profile: Vercel Production Active.");
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
