@@ -15,7 +15,29 @@ export default async function handler(req, res) {
     }
 
     const systemPrompt = "You are an expert curriculum design assistant for DepEd Senior High School Philippines. Populate detailed, professional academic content structures tailored for Grade 12 Empowerment Technology lessons.";
-    const userPrompt = `Generate structured lesson items for an Empowerment Technology Lesson titled: "${lessonTitle}". Provide outputs clearly segmented for: References, Learning Objectives, and brief instructional cues for the 5E cycle stages. Keep responses concise and highly actionable for immediate teaching use.`;
+    const userPrompt = `Generate a complete structured lesson plan for an Empowerment Technology Lesson titled: "${lessonTitle}". 
+    Provide the output clearly separated into these EXACT sections so the user can copy them into the form:
+    
+    [REFERENCES]
+    (Provide relevant textbook resources and links)
+    
+    [OBJECTIVES]
+    (Provide clear KSA objectives)
+    
+    [ENGAGE]
+    (5-minute hook activity)
+    
+    [EXPLORE]
+    (15-minute hands-on research or activity)
+    
+    [EXPLAIN]
+    (Core concepts discussion)
+    
+    [ELABORATE]
+    (Deep real-world application)
+    
+    [EVALUATE]
+    (Formative assessment questions/criteria)`;
 
     const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
@@ -24,7 +46,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant", // 🌟 FIXED MODEL NAME HERE
+        model: "llama-3.1-8b-instant", // 🌟 Active non-deprecated model
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt }
