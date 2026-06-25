@@ -11,6 +11,8 @@
   --word-blue: #2b579a;
   --excel-green: #217346;
   --ppt-orange: #d24726;
+  --light-green: #e2f0d9;
+  --light-orange: #fce4d6;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
@@ -29,27 +31,27 @@ body { background-color: var(--pure-black); background-image: linear-gradient(13
 .dlp-section { padding: 25px; border-bottom: 1px solid var(--border-color); }
 .dlp-section:nth-of-type(even) { background-color: var(--off-white); }
 .section-title { font-size: 1.2rem; color: var(--soft-black); border-left: 4px solid var(--primary-red); padding-left: 10px; margin-bottom: 15px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
-.section-subtitle { font-size: 0.85rem; color: var(--text-light); margin-bottom: 10px; font-style: italic; }
+
+/* Custom Block Variations matching colors from your uploaded framework templates */
+.integration-section { background-color: var(--light-green) !important; }
+.assessment-section { background-color: var(--light-orange) !important; }
+
 .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(45%, 1fr)); gap: 20px; }
 .input-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 15px; }
 .input-group label { font-size: 0.85rem; font-weight: 600; color: var(--soft-black); text-transform: uppercase; }
-input[type="text"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; }
+input[type="text"], select, textarea { width: 100%; padding: 12px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; background-color: #ffffff; }
 textarea { min-height: 110px; resize: vertical; }
-input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 5px rgba(211, 47, 47, 0.3); }
+input[type="text"]:focus, textarea:focus, select:focus { outline: none; border-color: var(--primary-red); box-shadow: 0 0 5px rgba(211, 47, 47, 0.3); }
 
-/* Separate 5Es Design styling block */
-.5e-wrapper { background-color: #fffaf9 !important; border-left: 6px solid var(--primary-red); }
-.e-field { background: #ffffff; padding: 15px; border-radius: 6px; border: 1px solid #e2e8f0; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.02); }
-.e-field label { color: var(--dark-red); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; }
+.select-wrapper { background: rgba(0, 0, 0, 0.03); padding: 12px; border-radius: 4px; border: 1px dashed var(--text-light); }
 
-/* AI Output Workspace Block Screen Styling */
+/* AI Output Display Style */
 .ai-output-workspace { background-color: #f8fafc !important; border: 2px solid #cbd5e1; border-radius: 6px; margin: 15px 25px; }
 .ai-stream-screen { font-family: 'Courier New', Courier, monospace !important; font-size: 0.95rem !important; background-color: #0f172a !important; color: #38bdf8 !important; min-height: 350px !important; border: none !important; border-radius: 6px !important; padding: 18px !important; line-height: 1.5; }
 .export-toolkit { margin-top: 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; background: #edf2f7; padding: 12px; border-radius: 4px; }
 .export-toolkit span { font-size: 0.85rem; font-weight: bold; color: #4a5568; }
 .export-btn-group { display: flex; gap: 10px; }
-.export-btn { padding: 8px 16px; border: none; border-radius: 4px; color: white; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: opacity 0.2s; }
-.export-btn:hover { opacity: 0.9; }
+.export-btn { padding: 8px 16px; border: none; border-radius: 4px; color: white; font-size: 0.85rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; }
 .btn-word { background-color: var(--word-blue); }
 .btn-excel { background-color: var(--excel-green); }
 .btn-ppt { background-color: var(--ppt-orange); }
@@ -61,7 +63,7 @@ input[type="text"]:focus, textarea:focus { outline: none; border-color: var(--pr
 .action-row { display: flex; justify-content: flex-end; gap: 15px; padding: 20px; background-color: var(--off-white); }
 .btn { padding: 14px 28px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
 .btn-submit { background-color: var(--pure-black); color: var(--pure-white); }
-.btn-ai { background-color: var(--primary-red); color: var(--pure-white); box-shadow: 0 4px 6px rgba(211,47,47,0.2); }
+.btn-ai { background-color: var(--primary-red); color: var(--pure-white); }
 .status-msg { padding: 0 20px 20px; text-align: right; font-size: 0.85rem; font-weight: bold; }
 .status-msg.loading { color: #d32f2f; }
 .status-msg.success { color: #2e7d32; }
