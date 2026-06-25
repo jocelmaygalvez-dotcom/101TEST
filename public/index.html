@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Senior High Daily Lesson Plan - Empowerment Technology</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="dlp-container">
+    <header class="dlp-header">
+      <div class="header-top">
+        <div class="logo-placeholder"><i class="fa-solid fa-graduation-cap fa-2x"></i></div>
+        <div class="school-info">
+          <h1>BADAS NATIONAL HIGH SCHOOL</h1>
+          <p>Senior High School Daily Lesson Plan Template</p>
+        </div>
+      </div>
+      
+      <div class="header-meta">
+        <div class="meta-item"><i class="fa-solid fa-user-tie"></i> <strong>Teacher:</strong> Jocel May G. Barde</div>
+        <div class="meta-item"><i class="fa-solid fa-laptop-code"></i> <strong>Learning Area:</strong> Empowerment Technology</div>
+        <div class="meta-item"><i class="fa-solid fa-layer-group"></i> <strong>Grade Level:</strong> Grade 12</div>
+        <div class="meta-item"><i class="fa-solid fa-calendar-week"></i> <strong>Timeline:</strong> Week 1 (Day 6)</div>
+        
+        <div class="meta-item-select">
+          <label for="quarterSelect"><i class="fa-solid fa-clock-rotate-left"></i> <strong>Period:</strong></label>
+          <select id="quarterSelect" class="header-dropdown">
+            <option value="1st_tri">1st Tri-Period</option>
+            <option value="2nd_tri">2nd Tri-Period</option>
+            <option value="3rd_tri">3rd Tri-Period</option>
+          </select>
+        </div>
+
+        <div class="meta-item-select">
+          <label for="durationSelect"><i class="fa-solid fa-hourglass-half"></i> <strong>Duration:</strong></label>
+          <select id="durationSelect" class="header-dropdown">
+            <option value="1.0">1.0 Hour (60 mins)</option>
+            <option value="1.5" selected>1.5 Hours (90 mins)</option>
+            <option value="2.0">2.0 Hours (120 mins)</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <form id="dlpForm">
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-heading"></i> Lesson Title</h2>
+        <div class="input-group">
+          <input type="text" id="lessonTitleInput" placeholder="Enter Lesson Title here..." required>
+        </div>
+      </section>
+
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-circle-nodes"></i> Framework Components</h2>
+        <div class="input-group">
+          <label><i class="fa-solid fa-book"></i> References</label>
+          <textarea placeholder="List textbook titles, pages, web URLs, or reference learning modules..."></textarea>
+        </div>
+      </section>
+
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-bullseye"></i> Intentions</h2>
+        <div class="grid-2">
+          <div class="input-group">
+            <label>Learning Competency & Curriculum Standards</label>
+            <textarea placeholder="Paste standard DepEd curriculum codes and competencies here..."></textarea>
+          </div>
+          <div class="input-group">
+            <label>Learning Objectives</label>
+            <textarea id="ksaObjectives" placeholder="Knowledge, Skills, and Attitudes (KSA)..."></textarea>
+          </div>
+        </div>
+        <div class="input-group" style="margin-top: 15px;">
+          <label><i class="fa-solid fa-users"></i> Learner Context</label>
+          <textarea placeholder="Describe core student backgrounds or inclusive pacing requirements..."></textarea>
+        </div>
+      </section>
+
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-sliders"></i> Learning Experience Flow</h2>
+        <div class="input-group">
+          <label><i class="fa-solid fa-hourglass-start"></i> Pre-Lesson Activity</label>
+          <textarea placeholder="Routine entry management (prayer, greeting check, attendance control, safety reminders)..."></textarea>
+        </div>
+        
+        <div class="dynamic-5e-container">
+          <div class="input-group select-wrapper">
+            <label for="eeSelector"><strong><i class="fa-solid fa-list-check"></i> Choose 5E Cycle Phase to Document:</strong></label>
+            <select id="eeSelector">
+              <option value="engage">Engage (Hook) - 5 Minutes</option>
+              <option value="explore">Explore - 15 Minutes</option>
+              <option value="explain">Explain (Picture-Based Processing)</option>
+              <option value="elaborate">Elaborate (Deep Application)</option>
+              <option value="evaluate">Evaluate (Assessment Integration)</option>
+              <option value="reflection">Reflection Note</option>
+            </select>
+          </div>
+          <div class="input-group" style="margin-top: 10px;">
+            <label>Phase Activity Scripts & Procedures</label>
+            <textarea id="eeContent" placeholder="Describe the selected phase's specific class actions or guide questions..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <div class="grid-2">
+        <section class="dlp-section">
+          <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> Learning Resources</h2>
+          <textarea placeholder="Hardware kits, software tools, presentation decks, or reference links..."></textarea>
+        </section>
+        <section class="dlp-section">
+          <h2 class="section-title"><i class="fa-solid fa-puzzle-piece"></i> Opportunities for Integration</h2>
+          <textarea placeholder="Cross-curricular points (e.g., Data Literacy, Media Systems, specialized tracks)..."></textarea>
+        </section>
+      </div>
+
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-file-pen"></i> Formative Assessment Framework</h2>
+        <div class="grid-2">
+          <div class="input-group select-wrapper">
+            <label for="assessmentType"><strong>Select Formative Assessment Type:</strong></label>
+            <select id="assessmentType">
+              <option value="quiz">Short Quiz / Pen-and-Paper Test</option>
+              <option value="performance">Performance Task (Hands-on Lab Exercise)</option>
+              <option value="oral">Oral Questioning / Classroom Recitation</option>
+              <option value="peer">Peer Review / Collaborative Self-Assessment</option>
+              <option value="observation">Teacher Observation Checklist</option>
+              <option value="exit">Exit Ticket / Quick Written Reflection</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Assessment Implementation Details</label>
+            <textarea placeholder="Detail checking standards, diagnostic items, or simple grading scales..."></textarea>
+          </div>
+        </div>
+        
+        <div class="grid-2" style="margin-top: 15px;">
+          <div class="input-group">
+            <label><i class="fa-solid fa-arrow-trend-up"></i> Ways Forward</label>
+            <textarea placeholder="Remediation steps, alternative tasks, or modifications for lesson pacing..."></textarea>
+          </div>
+          <div class="input-group">
+            <label><i class="fa-solid fa-arrow-up-right-from-square"></i> Extended Learning Opportunities</label>
+            <textarea placeholder="Enrichment exercises, individual homework, or advanced research links..."></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="dlp-section">
+        <h2 class="section-title"><i class="fa-solid fa-brain"></i> Reflections</h2>
+        <textarea placeholder="Log outcomes: percentage of learners mastering tasks, efficacy of strategies..."></textarea>
+      </section>
+
+      <footer class="dlp-signatures">
+        <div class="sig-box">
+          <input type="text" value="JOCEL MAY G. BARDE" class="sig-input" readonly>
+          <p>Prepared By (Teacher Signature)</p>
+        </div>
+        <div class="sig-box">
+          <input type="text" placeholder="Type Name of Verifier..." class="sig-input">
+          <p>Checked By (Master Teacher / Principal)</p>
+        </div>
+      </footer>
+
+      <div class="action-row">
+        <button type="button" id="aiGenerateBtn" class="btn btn-ai"><i class="fa-solid fa-robot"></i> Auto-Generate Content</button>
+        <button type="submit" class="btn btn-submit"><i class="fa-solid fa-floppy-disk"></i> Save Lesson Plan</button>
+      </div>
+      <div id="aiStatus" class="status-msg"></div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
