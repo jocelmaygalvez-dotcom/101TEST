@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Senior High Daily Lesson Plan - Empowerment Technology</title>
+  <title>Senior High Daily Lesson Plan - Executive Suite</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -20,10 +20,31 @@
       </div>
       
       <div class="header-meta">
-        <div class="meta-item"><i class="fa-solid fa-user-tie"></i> <strong>Teacher:</strong> Jocel May G. Barde</div>
-        <div class="meta-item"><i class="fa-solid fa-laptop-code"></i> <strong>Learning Area:</strong> Empowerment Technology</div>
-        <div class="meta-item"><i class="fa-solid fa-layer-group"></i> <strong>Grade Level:</strong> Grade 12</div>
-        <div class="meta-item"><i class="fa-solid fa-calendar-week"></i> <strong>Timeline:</strong> Week 1 (Day 6)</div>
+        <div class="meta-item-input">
+          <label for="teacherInput"><i class="fa-solid fa-user-tie"></i> <strong>Teacher:</strong></label>
+          <input type="text" id="teacherInput" class="header-text-field" value="Jocel May G. Barde" placeholder="Enter Teacher Name...">
+        </div>
+
+        <div class="meta-item-select">
+          <label for="learningAreaSelect"><i class="fa-solid fa-laptop-code"></i> <strong>Subject Area:</strong></label>
+          <select id="learningAreaSelect" class="header-dropdown">
+            <option value="Effective Communication">Effective Communication</option>
+            <option value="General Mathematics">General Mathematics</option>
+            <option value="General Science">General Science</option>
+            <option value="Life and Career Skills">Life and Career Skills</option>
+            <option value="Mabisang Komunikasyon">Mabisang Komunikasyon</option>
+            <option value="Pag-aaral ng Kasaysayan at Lipunang Pilipino">Pag-aaral ng Kasaysayan at Lipunang Pilipino</option>
+            <option value="Empowerment Technology" selected>Empowerment Technology (Elective)</option>
+          </select>
+        </div>
+
+        <div class="meta-item-select">
+          <label><i class="fa-solid fa-layer-group"></i> <strong>Grade Level:</strong></label>
+          <select id="gradeLevelSelect" class="header-dropdown">
+            <option value="Grade 11">Grade 11</option>
+            <option value="Grade 12" selected>Grade 12</option>
+          </select>
+        </div>
         
         <div class="meta-item-select">
           <label for="quarterSelect"><i class="fa-solid fa-clock-rotate-left"></i> <strong>Period:</strong></label>
@@ -97,7 +118,7 @@
         <h2 class="section-title"><i class="fa-solid fa-puzzle-piece"></i> Opportunities for Integration Across Subjects</h2>
         <div class="input-group">
           <label>Contextualized Connections & Interdisciplinary Links</label>
-          <textarea id="integrationContent" placeholder="Detail how this content links across other subject fields (e.g., Media and Information Literacy, Mathematics, Research, or specialized TVL/Academic tracks)..."></textarea>
+          <textarea id="integrationContent" placeholder="Detail how this content links across other subject fields (e.g., Media and Information Literacy, Mathematics, General Science, or Core Tracks)..."></textarea>
         </div>
       </section>
 
@@ -111,7 +132,7 @@
               <option value="questioning">Oral Questioning / Recitation</option>
               <option value="exit_tickets">Exit Tickets / Reflective Cards</option>
               <option value="quizzes">Quizzes / Short Diagnostics</option>
-              <option value="performance">Performance Task (Hands-on Lab Exercise)</option>
+              <option value="performance">Performance Task (Hands-on Activity)</option>
             </select>
           </div>
           <div class="input-group">
@@ -137,7 +158,7 @@
 
       <footer class="dlp-signatures">
         <div class="sig-box">
-          <input type="text" value="JOCEL MAY G. BARDE" class="sig-input" readonly>
+          <input type="text" id="sigTeacherName" value="JOCEL MAY G. BARDE" class="sig-input" readonly>
           <p>Prepared By (Teacher Signature)</p>
         </div>
         <div class="sig-box">
