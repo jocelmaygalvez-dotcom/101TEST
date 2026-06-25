@@ -24,15 +24,20 @@ body { background-color: var(--pure-black); background-image: linear-gradient(13
 .header-top h1 { font-size: 1.8rem; letter-spacing: 1px; }
 .header-top p { color: var(--primary-red); font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
 .header-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; background: rgba(255, 255, 255, 0.05); padding: 15px; border-radius: 6px; }
-.meta-item, .meta-item-select { font-size: 0.9rem; color: #dfdfdf; display: flex; align-items: center; gap: 6px; }
-.meta-item i, .meta-item-select label i { color: var(--primary-red); width: 16px; }
-.header-dropdown { background-color: rgba(255, 255, 255, 0.15) !important; color: var(--pure-white) !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; padding: 4px 8px !important; border-radius: 4px; cursor: pointer; }
+
+.meta-item-input, .meta-item-select { font-size: 0.9rem; color: #dfdfdf; display: flex; flex-direction: column; gap: 4px; }
+.meta-item-input label i, .meta-item-select label i { color: var(--primary-red); margin-right: 4px; }
+.header-text-field { background: rgba(255, 255, 255, 0.15); color: var(--pure-white); border: 1px solid rgba(255, 255, 255, 0.2); padding: 6px 10px; border-radius: 4px; font-size: 0.9rem; }
+.header-text-field:focus { outline: none; border-color: var(--primary-red); background: rgba(255, 255, 255, 0.25); }
+
+.header-dropdown { background-color: rgba(255, 255, 255, 0.15) !important; color: var(--pure-white) !important; border: 1px solid rgba(255, 255, 255, 0.2) !important; padding: 6px 10px !important; border-radius: 4px; cursor: pointer; }
 .header-dropdown option { background-color: var(--soft-black); color: var(--pure-white); }
+
 .dlp-section { padding: 25px; border-bottom: 1px solid var(--border-color); }
 .dlp-section:nth-of-type(even) { background-color: var(--off-white); }
 .section-title { font-size: 1.2rem; color: var(--soft-black); border-left: 4px solid var(--primary-red); padding-left: 10px; margin-bottom: 15px; text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
 
-/* Custom Block Variations matching colors from your uploaded framework templates */
+/* Framework Matrix Backgrounds matching uploaded templates color schemes */
 .integration-section { background-color: var(--light-green) !important; }
 .assessment-section { background-color: var(--light-orange) !important; }
 
@@ -45,7 +50,7 @@ input[type="text"]:focus, textarea:focus, select:focus { outline: none; border-c
 
 .select-wrapper { background: rgba(0, 0, 0, 0.03); padding: 12px; border-radius: 4px; border: 1px dashed var(--text-light); }
 
-/* AI Output Display Style */
+/* UI Display Frame Elements */
 .ai-output-workspace { background-color: #f8fafc !important; border: 2px solid #cbd5e1; border-radius: 6px; margin: 15px 25px; }
 .ai-stream-screen { font-family: 'Courier New', Courier, monospace !important; font-size: 0.95rem !important; background-color: #0f172a !important; color: #38bdf8 !important; min-height: 350px !important; border: none !important; border-radius: 6px !important; padding: 18px !important; line-height: 1.5; }
 .export-toolkit { margin-top: 15px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 15px; background: #edf2f7; padding: 12px; border-radius: 4px; }
