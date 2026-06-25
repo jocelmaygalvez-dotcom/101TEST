@@ -49,7 +49,7 @@
       <section class="dlp-section">
         <h2 class="section-title"><i class="fa-solid fa-heading"></i> Lesson Title</h2>
         <div class="input-group">
-          <input type="text" id="lessonTitleInput" placeholder="Enter Lesson Title here (e.g., Introduction to Advanced Presentation Tools)..." required>
+          <input type="text" id="lessonTitleInput" placeholder="Enter Lesson Title here..." required>
         </div>
       </section>
 
@@ -75,38 +75,54 @@
         </div>
       </section>
 
-      <section class="dlp-section 5e-wrapper">
-        <h2 class="section-title"><i class="fa-solid fa-sliders"></i> Learning Experience Flow (The 5E Cycle)</h2>
-        
-        <div class="input-group e-field">
-          <label><i class="fa-solid fa-magnet"></i> 1. ENGAGE (Hook - 5 Minutes)</label>
-          <textarea id="engageContent" placeholder="Describe how you will catch student attention and activate prior learning..."></textarea>
+      <section class="dlp-section dynamic-5e-section">
+        <h2 class="section-title"><i class="fa-solid fa-sliders"></i> Learning Experience Flow (5Es Choices)</h2>
+        <div class="input-group select-wrapper">
+          <label for="eeSelector"><strong><i class="fa-solid fa-list-check"></i> Select 5E Cycle Phase to Configure:</strong></label>
+          <select id="eeSelector">
+            <option value="engage">1. Engage (Hook) - 5 Minutes</option>
+            <option value="explore">2. Explore (Activity) - 15 Minutes</option>
+            <option value="explain">3. Explain (Core Discussion)</option>
+            <option value="elaborate">4. Elaborate (Deep Extension)</option>
+            <option value="evaluate">5. Evaluate (Assessment Phase)</option>
+          </select>
         </div>
-
-        <div class="input-group e-field">
-          <label><i class="fa-solid fa-compass"></i> 2. EXPLORE (Activity - 15 Minutes)</label>
-          <textarea id="exploreContent" placeholder="Describe the hands-on activity, research task, or team puzzle..."></textarea>
+        <div class="input-group" style="margin-top: 12px;">
+          <label id="phaseLabel"><i class="fa-solid fa-pen-to-square"></i> Selected Phase Activity Scripts & Procedures</label>
+          <textarea id="eeContent" placeholder="Describe the selected phase's specific class actions or guide questions..."></textarea>
         </div>
+      </section>
 
-        <div class="input-group e-field">
-          <label><i class="fa-solid fa-chalkboard-user"></i> 3. EXPLAIN (Core Instruction)</label>
-          <textarea id="explainContent" placeholder="Detail the concepts processing, student presentations, or discussion anchors..."></textarea>
+      <section class="dlp-section integration-section">
+        <h2 class="section-title"><i class="fa-solid fa-puzzle-piece"></i> Opportunities for Integration Across Subjects</h2>
+        <div class="input-group">
+          <label>Contextualized Connections & Interdisciplinary Links</label>
+          <textarea id="integrationContent" placeholder="Detail how this content links across other subject fields (e.g., Media and Information Literacy, Mathematics, Research, or specialized TVL/Academic tracks)..."></textarea>
         </div>
+      </section>
 
-        <div class="input-group e-field">
-          <label><i class="fa-solid fa-lightbulb"></i> 4. ELABORATE (Deep Application)</label>
-          <textarea id="elaborateContent" placeholder="How will students apply this skill to real-world context or scenarios?"></textarea>
-        </div>
-
-        <div class="input-group e-field">
-          <label><i class="fa-solid fa-square-poll-vertical"></i> 5. EVALUATE (Assessment Framework)</label>
-          <textarea id="evaluateContent" placeholder="Enter key rubric structures, short quiz items, or processing metrics..."></textarea>
+      <section class="dlp-section assessment-section">
+        <h2 class="section-title"><i class="fa-solid fa-file-pen"></i> Formative Assessment Framework</h2>
+        <div class="grid-2">
+          <div class="input-group select-wrapper">
+            <label for="assessmentType"><strong>Select Type of Formative Assessment:</strong></label>
+            <select id="assessmentType">
+              <option value="observation">Observation Checklist</option>
+              <option value="questioning">Oral Questioning / Recitation</option>
+              <option value="exit_tickets">Exit Tickets / Reflective Cards</option>
+              <option value="quizzes">Quizzes / Short Diagnostics</option>
+              <option value="performance">Performance Task (Hands-on Lab Exercise)</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label>Assessment Implementation Details</label>
+            <textarea id="assessmentDetails" placeholder="Detail standard criteria, grading scales, diagnostic items, or feedback loops..."></textarea>
+          </div>
         </div>
       </section>
 
       <section class="dlp-section ai-output-workspace">
-        <h2 class="section-title"><i class="fa-solid fa-robot"></i> AI Live Engine Streaming Output Area</h2>
-        <p class="section-subtitle">The fully articulated plan outputs will generate directly in the window block below. You can edit it manually or export it directly using the tool keys below.</p>
+        <h2 class="section-title"><i class="fa-solid fa-robot"></i> AI Live Engine Document Preview Window</h2>
         <textarea id="aiRawOutputDisplay" placeholder="Waiting for you to click 'Auto-Generate Content'..." class="ai-stream-screen"></textarea>
         
         <div class="export-toolkit">
