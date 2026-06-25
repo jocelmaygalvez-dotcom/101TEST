@@ -1,5 +1,4 @@
 export default async function handler(req, res) {
-  // Enforce secure POST communication channel
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
@@ -10,7 +9,6 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Missing Required Parameter: lessonTitle' });
     }
 
-    // Safely reads the hidden key inside Vercel's cloud settings
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
       return res.status(500).json({ error: 'System configuration error: Groq API Key missing.' });
@@ -26,7 +24,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "llama-3.1-8b-instant",
+        model: "llama-3.1-8b-instant", // 🌟 FIXED MODEL NAME HERE
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: userPrompt }
